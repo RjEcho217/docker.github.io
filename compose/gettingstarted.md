@@ -90,6 +90,7 @@ the following:
          - .:/code
       redis:
         image: "redis:alpine"
+**Tip** for Windows: Under build using context: . then dockerfile: Dockerfile.txt (as the name will allow this to run inside of powershell.) 
 
 This Compose file defines two services, `web` and `redis`. The web service:
 
@@ -151,7 +152,7 @@ containers](../engine/tutorials/dockervolumes.md).
 
    The number should increment.
 
-
+**Tips** for Windows Users. If the ADD & WORKDIR have the same name as VOLUMES it can casue errors when trying to load. Rename or removing the VOLUMES from the docker-compose.yml resolves this issue, or changing the volume mount path, while running from your local machine.
 ## Step 5: Update the application
 
 Because the application code is mounted into the container using a volume, you
@@ -203,6 +204,7 @@ container:
 
 At this point, you have seen the basics of how Compose works.
 
+**TIP** If you re-build the docker-compose container you may need to use the docker-compose rm container-ID to clear the cache. 
 
 ## Where to go next
 
